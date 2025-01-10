@@ -3,7 +3,6 @@ import java.util.*;
 Merge intervals - asked in tesco
 */
 
-
 public class Main {
     public static void solve(List<List<Integer>> intervals) {
       int n = intervals.size();
@@ -13,10 +12,7 @@ public class Main {
         if (intervals.get(i).get(0) <= v) {
           v = Math.max(v, intervals.get(i).get(1));
         } else {
-          List<Integer> intrvl = new ArrayList<>();
-          intrvl.add(u);
-          intrvl.add(v);
-          ans.add(intrvl);
+          ans.add(List.of(u,v));
           u = intervals.get(i).get(0);
           v = intervals.get(i).get(1);
         }
